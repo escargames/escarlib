@@ -1,11 +1,12 @@
 -- cool print (outlined)
 
-function coprint(text, x, y)
+function coprint(text, x, y, c)
     for i = -1,1 do
         for j = -1,1 do
-            print(text, x+i, y+j, 0)
+            if (i!=0 or j!=0) print(text, x+i, y+j, 0)
         end
     end
+    print(text, x, y, c)
 end
 
 -- cool print (centered)
