@@ -3,8 +3,8 @@
 do
     local ub = _update_buttons
     local oldstate, state = 0, btn()
-    function _update_buttons()
-        ub()
+    function _update_buttons(n)
+        ub(n)
         oldstate, state = state, btn()
     end
     function cbtnp(i)
