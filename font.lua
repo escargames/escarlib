@@ -29,7 +29,7 @@ function load_font(font, height)
         local x,y = 16,16
         local pixels = {}
         local xmax = 16
-        for i=1,#str+1 do
+        for i=1,#str do
             local ch=sub(str,i,i)
             local data=font[ch]
             if ch=="\n" or #ch==0 then
@@ -48,7 +48,7 @@ function load_font(font, height)
                         end
                     end
                 end
-                x += (#data + 1) * scale
+                x += #data * scale
                 xmax = max(x - scale, xmax)
             end
         end
