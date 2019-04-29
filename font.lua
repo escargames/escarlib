@@ -1,22 +1,12 @@
-function load_font(data, height)
+function load_font(font, height)
     pico8_print = pico8_print or print
     local m = 0x5f25
     local cache = {}
-    local font = {}
-    local acc = {}
     local outline = 0
     local ocol = 0
     local ox, oy = 0, 0
     local scale = 1
     local center = false
-    for i=1,#data do
-        if type(data[i])=='string' then
-            font[data[i]] = acc
-            acc = {}
-        else
-            add(acc, data[i])
-        end
-    end
     function font_outline(o, x, y, c)
         outline = o or 0
         ox, oy = x or 0, y or 0
