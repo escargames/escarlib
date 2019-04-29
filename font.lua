@@ -60,10 +60,10 @@ function load_font(font, height)
         -- if cache is full, remove one argument at random
         if count > 32 then
             count = flr(rnd(count))
-            for _,v in pairs(cache) do
+            for k,_ in pairs(cache) do
                 count -= 1
                 if count == 0 then
-                    del(cache, v)
+                    cache[k]=nil
                 end
             end
         end
