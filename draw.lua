@@ -1,6 +1,7 @@
 -- rect with smooth sides
 
 function smoothrect(x0, y0, x1, y1, r, col)
+    r=min(r,min(x1-x0,y1-y0)/2)
     line(x0, y0 + r, x0, y1 - r, col)
     line(x1, y0 + r, x1, y1 - r, col)
     line(x0 + r, y0, x1 - r, y0, col)
@@ -19,6 +20,7 @@ end
 -- rect filled with smooth sides
 
 function smoothrectfill(x0, y0, x1, y1, r, col1, col2)
+    r=min(r,min(x1-x0,y1-y0)/2)
     circfill(x0 + r, y0 + r, r, col1)
     circfill(x0 + r, y1 - r, r, col1)
     circfill(x1 - r, y0 + r, r, col1)
